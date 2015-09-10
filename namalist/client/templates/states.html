@@ -4,4 +4,20 @@
             {{stName}}
         </div>
     {{/each}}
+
+    {{#each sections}}
+        <div class="panel panel-default">
+            <div class="panel-heading"><h2>{{secName}}</h2></div>
+            <div class="panel-body">
+                <ul class="list-group">
+                {{#each getCategories _id}}
+                        <li class="list-group-item">
+                        {{category}}
+                        </li>
+                {{/each}}
+                </ul>
+            </div>
+        </div>
+    {{/each}}
+
 </template>
