@@ -1,0 +1,47 @@
+.navbar-brand {
+    max-width: 65%;
+}
+.directory h2 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    margin-top: 45px;
+    z-index: 1;
+    position: relative;
+}
+.directory h2:before {
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 7px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    z-index: -1;
+}
+.directory h2 span {
+    padding: 0 10px;
+}
+.directory h4 {
+    margin-top: 0px;
+}
+.directory i {
+    font-size: 29px;
+}
+.directory .directory-block {
+    min-height: 131px;
+}
+.directory-counties {
+    margin-top: 10px;
+    overflow: hidden;
+}
+.directory-counties h4 {
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.category {
+    border-style: none;
+}

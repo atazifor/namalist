@@ -1,23 +1,56 @@
 <template name="states">
-    {{#each states}}
-        <div>
-            {{stName}}
-        </div>
-    {{/each}}
-
-    {{#each sections}}
-        <div class="panel panel-default">
-            <div class="panel-heading"><h2>{{secName}}</h2></div>
-            <div class="panel-body">
-                <ul class="list-group">
-                {{#each getCategories _id}}
-                        <li class="list-group-item">
-                        {{category}}
-                        </li>
+    <div class="row">
+            <div class="col-sm-9">
+                <div class="row">
+                {{#each sections}}
+                    <div class="col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><h4><span>{{secName}}</span></h4></div>
+                            <div class="panel-body">
+                                {{#if getCategoriesForSaleCount _id}}
+                                    <h4><span>For Sale</span></h4>
+                                    <ul class="list-group">
+                                        {{#each getCategoriesForSale _id}}
+                                            <li class="list-group-item category">
+                                                    {{category}}
+                                            </li>
+                                        {{/each}}
+                                    </ul>
+                                {{/if}}
+                                {{#if getCategoriesForRentCount _id}}
+                                    <h4><span>For Rent</span></h4>
+                                    <ul class="list-group">
+                                        {{#each getCategoriesForRent _id}}
+                                            <li class="list-group-item category">
+                                                {{category}}
+                                            </li>
+                                        {{/each}}
+                                    </ul>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
                 {{/each}}
-                </ul>
+                </div>
             </div>
-        </div>
-    {{/each}}
-
+            <div class="col-sm-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h4><span>Regions</span></h4></div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            {{#each states}}
+                                <li class="list-group-item category">
+                                    {{stName}}
+                                    <ul class="list-group">
+                                        {{#each getCities _id}}
+                                            <li list-group-item category>{{city}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
 </template>
