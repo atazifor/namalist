@@ -34,21 +34,29 @@
                 </div>
             </div>
             <div class="col-sm-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading"><h4><span>Regions</span></h4></div>
-                    <div class="panel-body">
-                        <ul class="list-group">
-                            {{#each states}}
-                                <li class="list-group-item category">
-                                    {{stName}}
-                                    <ul class="list-group">
-                                        {{#each getCities _id}}
-                                            <li list-group-item category>{{city}}</li>
-                                        {{/each}}
-                                    </ul>
-                                </li>
-                            {{/each}}
-                        </ul>
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h4><span>Regions</span></h4></div>
+                        <div class="panel-body">
+                            <div class="panel-group" id="accordion">
+                                {{#each states}}
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title category">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#{{_id}}">{{stName}}</a>
+                                            </h4>
+                                        </div>
+                                        <div id="{{_id}}" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                {{#each getCities _id}}
+                                                    <a href="#"><span>{{city}}</span></a>
+                                                {{/each}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

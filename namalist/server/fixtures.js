@@ -14,7 +14,7 @@ if(Countries.find().count() == 0){
         "Littoral":['Douala'],
         "North": ['Garoua'],
         "Northwest":['Bamenda'],
-        "West":['Bafoussam, Nkongsamba, Dschang'],
+        "West":['Bafoussam', 'Nkongsamba', 'Dschang'],
         "South":['Ebolowa'],
         "Southwest":['Buea', 'Kumba', 'Limbe', 'Tiko']
     };
